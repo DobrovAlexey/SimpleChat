@@ -63,7 +63,7 @@ namespace Client
 
         public void SendMessage(string message)
         {
-            socket.Send(Encoding.UTF8.GetBytes('\u00FF' + message));
+            socket.Send(Encoding.UTF8.GetBytes('\0' + message));
         }
     }
 }

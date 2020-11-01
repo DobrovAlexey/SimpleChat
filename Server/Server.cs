@@ -82,7 +82,7 @@ namespace Server
 
                     Task.Run(() =>
                     {
-                        string mes = '\u00FF' + username + Encoding.UTF8.GetString(buffer, 1, count - 1);
+                        string mes = (char)127 + username + ": " + Encoding.UTF8.GetString(buffer, 1, count - 1);
                         logger("Сообщение от " + mes.Substring(1));
 
                         foreach (Socket socket in usersList.Keys)
